@@ -132,6 +132,7 @@ function isEncrypted(filePath) {
 }
 
 function isWxAppid(appid) {
+  console.warn(appid)
   return appid && /^wx[0-9a-z]{16}$/.test(appid)
 }
 

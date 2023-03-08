@@ -23,7 +23,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "wxupk": "node bin/wxunpacker.js",
+    "wxupk": "node --trace-deprecation bin/wxunpacker.js",
     "wxunpacker": "yarn wxupk"
   },
   "dependencies": {

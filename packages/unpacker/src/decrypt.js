@@ -18,7 +18,7 @@ function _decryptWxapkg(options) {
     return callback && callback(false)
   }
   const args = ['-wxid', wxAppid, '-in', filePath, '-out', savePath]
-  child_process.execFile(path.resolve(__dirname, './exe/decrypt.exe'), args, (error, stdout, stderr) => {
+  child_process.execFile(path.resolve(__dirname, 'exe/decrypt'), args, (error, stdout, stderr) => {
     stdout = String(stdout).trim()
     if (error || stderr || stdout.length !== 4) {
       logger.error(error || stderr || stdout)
@@ -36,10 +36,10 @@ function _decryptWxapkg(options) {
  * @return {string[]|void}
  * */
 function decryptWxapkg(options) {
-  if (!isWin()) {
-    logger.error('Decryptor only supports Windows platform!')
-    return callback && callback(false)
-  }
+  // if (!isWin()) {
+  //   logger.error('Decryptor only supports Windows platform!')
+  //   return callback && callback(false)
+  // }
   if (!options) throw Error('options is required!')
   const { wxAppid, filePath, callback } = options
   if (!isWxAppid(wxAppid)) {
